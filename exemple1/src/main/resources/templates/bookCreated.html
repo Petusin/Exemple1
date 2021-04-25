@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<head>
+<meta charset="ISO-8859-1">
+<title>Book created</title>
+</head>
+<body>
+<h1>BOOK CREATED!!!</h1>
+
+<table style="width:80%">
+  <tr class="w3-light-grey">
+    <th>serverTime</th>
+    <th>message</th>
+    <th>bookCreated</th>
+    <th>bookCreatedasObject.title</th>
+    <th>bookCreatedasObject.author</th>
+    <th>bookCreatedasObject.detail</th>
+    <th>bookCreatedasObject</th>
+  </tr>
+  <tr class="w3-light-white">
+    <td><p th:text="${serverTime}" /></p></td>
+    <td><p th:text="${message}"></p></td>
+    <td><p th:text="${bookCreated}"></p></td>
+    <td><p th:text="${bookCreatedasObject.title}"></p></td>
+    <td><p th:text="${bookCreatedasObject.author}"></p></td>
+    <td><p th:text="${bookCreatedasObject.detail}"></p></td>
+    <td><p th:text="${bookCreatedasObject}"></p></td>
+  </tr>
+  
+</table>
+ 
+ <p>
+<button class="w3-button w3-green w3-hover-aqua">
+ <a th:href="@{/books/allBooks}">Library</a>
+ </button>
+</p>
+
+</body>
+</html>

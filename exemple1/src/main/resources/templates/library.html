@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+<body>
+<h1>Spring boot books exemple</h1>
+<h3>table of static books</h3>
+			
+		<table class="w3-table-all w3-hoverable" >
+		
+			<tr th:each="book:${booksfromController}">
+									
+			
+				<td th:text="${book.title}"></td>
+				<td th:text="${book.ISBN}"></td>
+				<td th:text="${book.pages}"></td>
+				<td th:text="${book.year}"></td>
+				<td th:text="${book.author}"></td>
+				
+				
+				<td> 
+					<button class="w3-button w3-red w3-hover-green">
+						<a th:href ="@{deleteBook(titleFromView=${book.title})}">  Delete this book </a> 
+					</button>
+				</td>
+				<td> 
+					<button class="w3-button w3-blue w3-hover-green">
+						<a th:href ="@{detailBook(titleFromView=${book.title})}"> Detail this book </a> 
+					</button>
+				</td>
+					
+				<td> 
+					<button class="w3-button w3-yellow w3-hover-green">
+						<a th:href ="@{updateBook(titleFromView=${book.title})}">  Update this book </a>
+				</button> 
+				</td>
+				
+			</tr>
+		</table>
+
+<p>
+<button class="w3-button w3-green w3-hover-aqua">
+ <a th:href="@{/books/newBook}">Add new book</a>
+ </button>
+</p>			
+<!-- <h3>table of fake books</h3>	
+		
+		<table class="w3-table-all w3-hoverable" >
+			<tr th:each="book:${fakebooksfromController}">
+				<td th:text="${book.title}"></td>
+				<td th:text="${book.ISBN}"></td>
+				<td th:text="${book.pages}"></td>
+				<td th:text="${book.year}"></td>
+				<td th:text="${book.author}"></td>
+			</tr>
+		</table> -->
+
+</html>
+
+
