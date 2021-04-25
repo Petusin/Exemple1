@@ -7,6 +7,7 @@ package com.example.exemple1;
 // (2) from spring (4.0) it spring boot, we use configuration java classes @configuration
 // (3) all configurations >> annotations 
 // (4) application.proporties yml
+
 public class Book {
 
 	private String title;
